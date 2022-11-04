@@ -9,6 +9,7 @@ import { useAuth } from '../../../composables/useAuth';
 const AuthLoginPage = ({ navigation }: { navigation: any }) => {
   const [email, onChangeEmail] = React.useState('');
   const [password, onChangePassword] = React.useState('');
+  const [inputColor, onChangeInputColor] = React.useState('text-white');
 
   async function isAuthenticated() {
     const { authenticated } = useAuth();
@@ -51,8 +52,16 @@ const AuthLoginPage = ({ navigation }: { navigation: any }) => {
           <View>
             <Text style={tw`mb-1 font-semibold text-white`}>Email</Text>
             <TextInput
-              style={tw`bg-blue-400 w-full bg-opacity-50 px-3 w-full h-10 border border-blue-500 text-white`}
+              style={tw`bg-blue-400 w-full bg-opacity-50 px-3 w-full h-10 border border-blue-500 ${inputColor}`}
               onChangeText={onChangeEmail}
+              autoComplete='email'
+              autoCapitalize='none'
+              keyboardType='email-address'
+              placeholder='Your email...'
+              placeholderTextColor="#fff"
+              onFocus={() => onChangeInputColor('text-black')}
+              onBlur={() => onChangeInputColor('text-white')}
+              onEndEditing={() => onChangeInputColor('text-white')}
               value={email}
             />
           </View>
@@ -62,6 +71,9 @@ const AuthLoginPage = ({ navigation }: { navigation: any }) => {
               style={tw`bg-blue-400 w-full bg-opacity-50 px-3 w-full h-10 border border-blue-500 text-white`}
               secureTextEntry={true}
               onChangeText={onChangePassword}
+              autoComplete='password'
+              placeholder='Your password...'
+              placeholderTextColor="#fff"
               value={password}
             />
           </View>
