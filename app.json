@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Heroes Of The Universe",
-    "slug": "heroes-of-the-universe",
+    "slug": "private-game-mobile",
     "version": "1.0.0",
     "privacy": "public",
     "description": "Heroes Of The Universe - Browser Based Game",
@@ -14,7 +14,8 @@
       "backgroundColor": "#000000"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/0113dc74-6163-4d70-971b-8ef8cd39d655"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -36,6 +37,9 @@
       "eas": {
         "projectId": "0113dc74-6163-4d70-971b-8ef8cd39d655"
       }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
     }
   }
 }
